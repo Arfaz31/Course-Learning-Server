@@ -35,11 +35,13 @@ const userSchema = new Schema<TUser, UserModel>(
     follower: [
       {
         type: Schema.Types.ObjectId,
+        ref: 'User',
       },
     ],
     following: [
       {
         type: Schema.Types.ObjectId,
+        ref: 'User',
       },
     ],
     likeCourses: [

@@ -39,4 +39,11 @@ router.patch(
   UserController.updateUserProfile,
 );
 
+router.patch('/follow/:id', auth(USER_ROLE.STUDENT), UserController.followUser);
+router.patch(
+  '/unfollow/:id',
+  auth(USER_ROLE.STUDENT),
+  UserController.unFollowUser,
+);
+
 export const UserRoutes = router;
