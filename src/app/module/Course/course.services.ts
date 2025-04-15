@@ -14,7 +14,23 @@ const createCourse = async (payload: TCourse, thumbnail: TImageFile) => {
 
 const getAllCourses = async (query: Record<string, unknown>) => {
   const courseQuery = new QueryBuilder(
-    Course.find().populate('teacher', '_id name email profileImg'),
+    Course.find()
+      .populate('teacher', '_id name email profileImg')
+      .populate({
+        path: 'feedback',
+        populate: {
+          path: 'user',
+          select: '_id name email profileImg',
+        },
+      })
+      .populate('like', '_id name email profileImg')
+      .populate({
+        path: 'lessons',
+        populate: {
+          path: 'topics',
+          select: 'title type order content quizQuestions',
+        },
+      }),
     query,
   )
     .search(courseSearchableFields)
@@ -29,10 +45,23 @@ const getAllCourses = async (query: Record<string, unknown>) => {
 };
 
 const getSingleCourse = async (id: string) => {
-  const result = await Course.findById(id).populate(
-    'teacher',
-    '_id name email profileImg',
-  );
+  const result = await Course.findById(id)
+    .populate('teacher', '_id name email profileImg')
+    .populate({
+      path: 'feedback',
+      populate: {
+        path: 'user',
+        select: '_id name email profileImg',
+      },
+    })
+    .populate('like', '_id name email profileImg')
+    .populate({
+      path: 'lessons',
+      populate: {
+        path: 'topics',
+        select: 'title type order content quizQuestions',
+      },
+    });
   return result;
 };
 
@@ -54,7 +83,22 @@ const deleteCourse = async (id: string) => {
 };
 
 const getTeacherCourses = async (teacherId: string) => {
-  const result = await Course.find({ teacher: teacherId });
+  const result = await Course.find({ teacher: teacherId })
+    .populate({
+      path: 'feedback',
+      populate: {
+        path: 'user',
+        select: '_id name email profileImg',
+      },
+    })
+    .populate('like', '_id name email profileImg')
+    .populate({
+      path: 'lessons',
+      populate: {
+        path: 'topics',
+        select: 'title type order content quizQuestions',
+      },
+    });
   return result;
 };
 

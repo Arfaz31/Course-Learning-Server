@@ -5,6 +5,8 @@ import { CourseRoutes } from '../module/Course/course.route';
 import { LessonRoutes } from '../module/Lesson/lesson.route';
 import { TopicRoutes } from '../module/Topic/topic.route';
 import { EnrollmentRoutes } from '../module/Enrollment/enrollment.route';
+import { LikeRoutes } from '../module/Like/like.route';
+import { FeedbackRoutes } from '../module/Feedback/feedback.route';
 
 const middleWareRouter = Router();
 
@@ -32,6 +34,14 @@ const moduleRoutes = [
   {
     path: '/enrollment',
     route: EnrollmentRoutes,
+  },
+  {
+    path: '/like',
+    route: LikeRoutes,
+  },
+  {
+    path: '/feedback',
+    route: FeedbackRoutes,
   },
 ];
 

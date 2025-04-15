@@ -55,10 +55,12 @@ const courseSchema = new Schema<TCourse>(
     feedback: {
       type: [Schema.Types.ObjectId],
       ref: 'Feedback',
+      default: [],
     },
     like: {
       type: [Schema.Types.ObjectId],
       ref: 'User',
+      default: [],
     },
     viewCount: {
       type: Number,
