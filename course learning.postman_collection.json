@@ -1,0 +1,698 @@
+{
+	"info": {
+		"_postman_id": "9ab0b1ec-51bb-4f7f-a5ec-42b2ed8ea780",
+		"name": "course learning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31338574"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "get all user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1YTMxN2Q2MmY2MzI0YmU1YWVhMyIsImVtYWlsIjoiYXJmYXoxQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiaWF0IjoxNzQ0NzI0MzIzLCJleHAiOjE3NDQ4MTA3MjN9.Xqwm_ZJTPqb_7QSUU87wfQqUXte3uj6Qd2jOT1p1bYM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "7KydtXMRr/arfaz-pp.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/user/update-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1YTMxN2Q2MmY2MzI0YmU1YWVhMyIsImVtYWlsIjoiYXJmYXoxQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiaWF0IjoxNzQ0NzI0MzIzLCJleHAiOjE3NDQ4MTA3MjN9.Xqwm_ZJTPqb_7QSUU87wfQqUXte3uj6Qd2jOT1p1bYM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Follow Teacher",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1OWI3OWZlNmM4MGM3OWZhN2EwMCIsImVtYWlsIjoiam9ueTFAZ21haWwuY29tIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3NDQ3NDkyMzgsImV4cCI6MTc0NDkyMjAzOH0.zSrvWk0900x19KE9sHuLORb1AArfjYowL9X0hQHujuU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/user/follow/67fe5a317d62f6324be5aea3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"follow",
+								"67fe5a317d62f6324be5aea3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQwM2U3YjIxLTM0OGYtNGNjZS05NWViLTI2MGQ4Yzg5OGQwNyIsImVtYWlsIjoiYWtpYkBleGFtcGxlLmNvbSIsImNvbnRhY3ROdW1iZXIiOiIwMTc4OTEwMDc3NSIsInJvbGUiOiJBQ0NPVU5UQU5UX1NUQUZGIiwic3RhdHVzIjoiQUNUSVZFIiwicHJvZmlsZUltYWdlIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGI1aTRkdWx0L2ltYWdlL3VwbG9hZC92MTc0MTc5NDIwMC9kN2QxN2V0NHZrLTE3NDE3OTQxOTk0MDgtaW1hZ2UtdXNlcnAucG5nIiwiaWF0IjoxNzQxODQ2NDE4LCJleHAiOjE3NDE5MzI4MTh9.yXoSP03zj-s9Dc_09p5KVQkNQjuOjHam4qUUIWKa_3c",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n//teacher\r\n// {\r\n//     \"email\":\"arfaz1@gmail.com\",\r\n//     \"password\": \"123456\"\r\n// }\r\n\r\n\r\n//student\r\n{\r\n    \"email\":\"jony1@gmail.com\",\r\n    \"password\": \"123456\"\r\n}\r\n\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Arfaz Ahamed\",\r\n  \"email\": \"arfaz1@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"TEACHER\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Create course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1YTMxN2Q2MmY2MzI0YmU1YWVhMyIsImVtYWlsIjoiYXJmYXoxQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiaWF0IjoxNzQ0NzI0MzIzLCJleHAiOjE3NDQ4MTA3MjN9.Xqwm_ZJTPqb_7QSUU87wfQqUXte3uj6Qd2jOT1p1bYM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\n  \"title\": \"Mastering Python for Data Science\",\n  \"description\": \"A comprehensive course covering Python essentials and its application in data science.\",\n  \"teacher\": \"67fe5a317d62f6324be5aea3\",\n  \"price\": 5500,\n  \"isFree\": false,\n  \"category\": \"Data Science\",\n  \"level\": \"intermediate\",\n  \"duration\": 15,\n  \"isPublished\": true,\n  \"publishedAt\": \"2025-05-01T09:30:00.000Z\",\n  \"tags\": [\"python\", \"data science\", \"machine learning\"]\n}",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "C0WvLMO2T/python-banner-img.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/course/create-course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"create-course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update course",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1YTMxN2Q2MmY2MzI0YmU1YWVhMyIsImVtYWlsIjoiYXJmYXoxQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwicHJvZmlsZUltZyI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2Rub20wZnIweC9pbWFnZS91cGxvYWQvdjE3NDQ3MjQ4NzgvMTVtMzkwNHF4amYtMTc0NDcyNDg3NDk3OC1pbWFnZS1hcmZhei1wcC5wbmciLCJpYXQiOjE3NDQ3MzE3NzcsImV4cCI6MTc0NDgxODE3N30.kw4rJJhz_VLWYAXK5eEKq_2mdsQ4ZqHFlhqtBSarmYc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "6oixHzSas/js-course.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/course/update-course/67fe7c8506b1673c950513be",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"update-course",
+								"67fe7c8506b1673c950513be"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all course",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1OWI3OWZlNmM4MGM3OWZhN2EwMCIsImVtYWlsIjoiam9ueTFAZ21haWwuY29tIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3NDQ3MzI0MTQsImV4cCI6MTc0NDkwNTIxNH0.WBBr17EsruAROGcle1Eqm2XUXMcKrpc8TuomAKfNpl0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get teacher's course",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1YTMxN2Q2MmY2MzI0YmU1YWVhMyIsImVtYWlsIjoiYXJmYXoxQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiaWF0IjoxNzQ0NzI0MzIzLCJleHAiOjE3NDQ4MTA3MjN9.Xqwm_ZJTPqb_7QSUU87wfQqUXte3uj6Qd2jOT1p1bYM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/course/teacher/my-courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"teacher",
+								"my-courses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lessons",
+			"item": [
+				{
+					"name": "Create lessons",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1YTMxN2Q2MmY2MzI0YmU1YWVhMyIsImVtYWlsIjoiYXJmYXoxQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiaWF0IjoxNzQ0NzI0MzIzLCJleHAiOjE3NDQ4MTA3MjN9.Xqwm_ZJTPqb_7QSUU87wfQqUXte3uj6Qd2jOT1p1bYM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n \"title\": \"Functions in JavaScript\",\r\n  \"description\": \"Understand how functions work in JavaScript, including function declarations, expressions, and arrow functions.\",\r\n  \"course\": \"67feb34093651e30693f6e92\",\r\n  \"duration\": 25\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/lesson/create-lesson",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"lesson",
+								"create-lesson"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific course Lessons",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1YTMxN2Q2MmY2MzI0YmU1YWVhMyIsImVtYWlsIjoiYXJmYXoxQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiaWF0IjoxNzQ0NzI0MzIzLCJleHAiOjE3NDQ4MTA3MjN9.Xqwm_ZJTPqb_7QSUU87wfQqUXte3uj6Qd2jOT1p1bYM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/lesson/specific-course/67fe7c8506b1673c950513be",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"lesson",
+								"specific-course",
+								"67fe7c8506b1673c950513be"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Topic",
+			"item": [
+				{
+					"name": "Create topic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1YTMxN2Q2MmY2MzI0YmU1YWVhMyIsImVtYWlsIjoiYXJmYXoxQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiaWF0IjoxNzQ0NzI0MzIzLCJleHAiOjE3NDQ4MTA3MjN9.Xqwm_ZJTPqb_7QSUU87wfQqUXte3uj6Qd2jOT1p1bYM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Quiz: JavaScript Functions\",\r\n    \"lesson\": \"67feb3a393651e30693f6ea0\",\r\n    \"type\": \"quiz\",\r\n    \"quizQuestions\": [\r\n      {\r\n        \"question\": \"Which keyword is used to declare a function in JavaScript?\",\r\n        \"options\": [\r\n          { \"text\": \"func\", \"isCorrect\": false },\r\n          { \"text\": \"function\", \"isCorrect\": true },\r\n          { \"text\": \"define\", \"isCorrect\": false },\r\n          { \"text\": \"method\", \"isCorrect\": false }\r\n        ]\r\n      },\r\n      {\r\n        \"question\": \"What will `greet('John')` return in the following function?\\n\\nfunction greet(name) {\\n  return 'Hello, ' + name;\\n}\",\r\n        \"options\": [\r\n          { \"text\": \"Hello John\", \"isCorrect\": false },\r\n          { \"text\": \"Hi, John\", \"isCorrect\": false },\r\n          { \"text\": \"Hello, John\", \"isCorrect\": true },\r\n          { \"text\": \"greet John\", \"isCorrect\": false }\r\n        ]\r\n      },\r\n      {\r\n        \"question\": \"Which of the following is a correct arrow function syntax?\",\r\n        \"options\": [\r\n          { \"text\": \"() => console.log('Hello')\", \"isCorrect\": true },\r\n          { \"text\": \"=> function() { console.log('Hello') }\", \"isCorrect\": false },\r\n          { \"text\": \"function => () { console.log('Hello') }\", \"isCorrect\": false },\r\n          { \"text\": \"function() => { console.log('Hello') }\", \"isCorrect\": false }\r\n        ]\r\n      }\r\n    ]\r\n  }\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/topic/create-topic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"topic",
+								"create-topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific  Lesson's topics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1YTMxN2Q2MmY2MzI0YmU1YWVhMyIsImVtYWlsIjoiYXJmYXoxQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiaWF0IjoxNzQ0NzI0MzIzLCJleHAiOjE3NDQ4MTA3MjN9.Xqwm_ZJTPqb_7QSUU87wfQqUXte3uj6Qd2jOT1p1bYM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/topic/specific-lesson/67fe8f8a812fd68c55870427",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"topic",
+								"specific-lesson",
+								"67fe8f8a812fd68c55870427"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Like course",
+			"item": [
+				{
+					"name": "Add like",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1OWI3OWZlNmM4MGM3OWZhN2EwMCIsImVtYWlsIjoiam9ueTFAZ21haWwuY29tIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3NDQ3NDkyMzgsImV4cCI6MTc0NDkyMjAzOH0.zSrvWk0900x19KE9sHuLORb1AArfjYowL9X0hQHujuU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/like/67feb34093651e30693f6e92",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"like",
+								"67feb34093651e30693f6e92"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Feedback",
+			"item": [
+				{
+					"name": "Create Feedback",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1OWI3OWZlNmM4MGM3OWZhN2EwMCIsImVtYWlsIjoiam9ueTFAZ21haWwuY29tIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3NDQ3NDkyMzgsImV4cCI6MTc0NDkyMjAzOH0.zSrvWk0900x19KE9sHuLORb1AArfjYowL9X0hQHujuU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"course\":\"67feb34093651e30693f6e92\",\r\n    \"content\":\"This course if fantastic!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/feedback/create-feedback",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"feedback",
+								"create-feedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all feedback by courseId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1YTMxN2Q2MmY2MzI0YmU1YWVhMyIsImVtYWlsIjoiYXJmYXoxQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiaWF0IjoxNzQ0NzI0MzIzLCJleHAiOjE3NDQ4MTA3MjN9.Xqwm_ZJTPqb_7QSUU87wfQqUXte3uj6Qd2jOT1p1bYM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"course\":\"67feb34093651e30693f6e92\",\r\n    \"content\":\"This course if fantastic!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/feedback/get-all-feedback/67feb34093651e30693f6e92",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"feedback",
+								"get-all-feedback",
+								"67feb34093651e30693f6e92"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Enrollment",
+			"item": [
+				{
+					"name": "Create Enrollment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1OWI3OWZlNmM4MGM3OWZhN2EwMCIsImVtYWlsIjoiam9ueTFAZ21haWwuY29tIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3NDQ3NDU2MzcsImV4cCI6MTc0NDkxODQzN30.9pqc9Puo1xoyK0q3dobO1JK-wDs4nsMgPI20I7UJVH8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"course\":\"67feb34093651e30693f6e92\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/enrollment/create-enrollment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"enrollment",
+								"create-enrollment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student Enrolled courses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1OWI3OWZlNmM4MGM3OWZhN2EwMCIsImVtYWlsIjoiam9ueTFAZ21haWwuY29tIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3NDQ3NDU2MzcsImV4cCI6MTc0NDkxODQzN30.9pqc9Puo1xoyK0q3dobO1JK-wDs4nsMgPI20I7UJVH8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/enrollment/my-enrollments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"enrollment",
+								"my-enrollments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Analytics of Enrolled Course of A teacher",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmU1YTMxN2Q2MmY2MzI0YmU1YWVhMyIsImVtYWlsIjoiYXJmYXoxQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiaWF0IjoxNzQ0NzI0MzIzLCJleHAiOjE3NDQ4MTA3MjN9.Xqwm_ZJTPqb_7QSUU87wfQqUXte3uj6Qd2jOT1p1bYM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/enrollment/course-analytics/67feb34093651e30693f6e92",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"enrollment",
+								"course-analytics",
+								"67feb34093651e30693f6e92"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
