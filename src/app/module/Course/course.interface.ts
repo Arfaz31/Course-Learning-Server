@@ -13,4 +13,6 @@ export type TCourse = {
   isPublished: boolean;
   publishedAt?: string;
   tags?: string[];
+  feedback: Types.ObjectId[]; //by enrolled students
+  like: Types.ObjectId[]; //by students
 };
