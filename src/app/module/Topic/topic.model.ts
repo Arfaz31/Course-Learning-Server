@@ -37,7 +37,6 @@ const topicSchema = new Schema<TTopic>(
     },
     order: {
       type: Number,
-      required: true,
     },
     type: {
       type: String,

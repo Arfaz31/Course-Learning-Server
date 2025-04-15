@@ -34,6 +34,11 @@ const lessonSchema = new Schema<TLesson>(
       type: [String],
       default: [],
     },
+    topics: {
+      type: [Schema.Types.ObjectId],
+      ref: 'Topic',
+      default: [],
+    },
   },
   {
     timestamps: true,

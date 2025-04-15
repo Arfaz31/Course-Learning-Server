@@ -9,6 +9,7 @@ export type TLesson = {
   isPublished: boolean;
   videoUrl?: string;
   resources?: string[];
+  topics: Types.ObjectId[];
 };
 
 export type TUpdateLesson = {

@@ -52,6 +52,23 @@ const courseSchema = new Schema<TCourse>(
       type: [String],
       default: [],
     },
+    feedback: {
+      type: [Schema.Types.ObjectId],
+      ref: 'Feedback',
+    },
+    like: {
+      type: [Schema.Types.ObjectId],
+      ref: 'User',
+    },
+    viewCount: {
+      type: Number,
+      default: 0,
+    },
+    lessons: {
+      type: [Schema.Types.ObjectId],
+      ref: 'Lesson',
+      default: [],
+    },
   },
   {
     timestamps: true,

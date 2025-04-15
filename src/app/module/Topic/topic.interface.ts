@@ -19,7 +19,7 @@ export type TTopic = {
   id?: string;
   title: string;
   lesson: Types.ObjectId;
-  order: number; // To maintain the order of topics in a lesson
+  order?: number; // To maintain the order of topics in a lesson
   type: keyof typeof TOPIC_TYPE;
   content?: string;
   quizQuestions?: TQuizQuestion[];

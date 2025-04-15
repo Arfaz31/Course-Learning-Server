@@ -15,4 +15,6 @@ export type TCourse = {
   tags?: string[];
   feedback: Types.ObjectId[]; //by enrolled students
   like: Types.ObjectId[]; //by students
+  viewCount: number;
+  lessons: Types.ObjectId[];
 };

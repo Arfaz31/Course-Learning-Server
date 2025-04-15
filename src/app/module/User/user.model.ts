@@ -31,6 +31,23 @@ const userSchema = new Schema<TUser, UserModel>(
     profileImg: {
       type: String,
     },
+
+    follower: [
+      {
+        type: Schema.Types.ObjectId,
+      },
+    ],
+    following: [
+      {
+        type: Schema.Types.ObjectId,
+      },
+    ],
+    likeCourses: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Course',
+      },
+    ],
     passwordChangedAt: {
       type: Date,
     },

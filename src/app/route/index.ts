@@ -3,6 +3,8 @@ import { AuthRoutes } from '../module/Auth/auth.route';
 import { UserRoutes } from '../module/User/user.route';
 import { CourseRoutes } from '../module/Course/course.route';
 import { LessonRoutes } from '../module/Lesson/lesson.route';
+import { TopicRoutes } from '../module/Topic/topic.route';
+import { EnrollmentRoutes } from '../module/Enrollment/enrollment.route';
 
 const middleWareRouter = Router();
 
@@ -22,6 +24,14 @@ const moduleRoutes = [
   {
     path: '/lesson',
     route: LessonRoutes,
+  },
+  {
+    path: '/topic',
+    route: TopicRoutes,
+  },
+  {
+    path: '/enrollment',
+    route: EnrollmentRoutes,
   },
 ];
 

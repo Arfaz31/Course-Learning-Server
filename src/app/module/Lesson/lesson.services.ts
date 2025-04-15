@@ -7,6 +7,7 @@ import QueryBuilder from '../../Builder/QueryBuilder';
 import { JwtPayload } from 'jsonwebtoken';
 import AppError from '../../Error/AppError';
 import { lessonSearchableFields } from './lesson.constant';
+import mongoose from 'mongoose';
 
 const createLesson = async (payload: TLesson, user: JwtPayload) => {
   const isCourseExist = await Course.findById(payload.course);
@@ -29,8 +30,28 @@ const createLesson = async (payload: TLesson, user: JwtPayload) => {
   // If order is not provided, set it to the next available order
   payload.order = (lastLesson?.order ?? 0) + 1;
 
-  const result = await Lesson.create(payload);
-  return result;
+  const session = await mongoose.startSession();
+  session.startTransaction();
+
+  try {
+    // Create the lesson
+    const lesson = await Lesson.create([payload], { session });
+
+    // Add the lesson to the course's lessons array
+    await Course.findByIdAndUpdate(
+      payload.course,
+      { $push: { lessons: lesson[0]._id } },
+      { session },
+    );
+
+    await session.commitTransaction();
+    return lesson[0];
+  } catch (error) {
+    await session.abortTransaction();
+    throw error;
+  } finally {
+    session.endSession();
+  }
 };
 
 const getAllLessons = async (query: Record<string, unknown>) => {

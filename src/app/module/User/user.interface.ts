@@ -1,4 +1,4 @@
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { USER_ROLE } from './user.constant';
 
 export type TUser = {
@@ -10,6 +10,9 @@ export type TUser = {
   profileImg?: string;
   isDeleted: boolean;
   passwordChangedAt?: Date;
+  follower: Types.ObjectId[];
+  following: Types.ObjectId[];
+  likeCourses: Types.ObjectId[];
 };
 
 export interface UserModel extends Model<TUser> {
