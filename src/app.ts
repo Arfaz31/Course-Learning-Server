@@ -19,7 +19,7 @@ app.options('*', cors());
 app.use(cookieParser());
 app.use('/api/v1', MiddlewareRoutes);
 app.get('/', (req: Request, res: Response) => {
-  res.send('Welcome to Hotlancer server');
+  res.send('Welcome to Course Learning server');
 });
 
 app.use(
